@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crop Yield Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f6f6f6;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 20px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌾 Crop Yield Prediction Form</h1>
+  <form action="/predict" method="POST">
+
+    <label>Region:</label>
+    <select name="Region" required>
+      <option value="East">East</option>
+      <option value="North">North</option>
+      <option value="South">South</option>
+      <option value="West">West</option>
+    </select>
+
+    <label>Soil Type:</label>
+    <select name="Soil_Type" required>
+      <option value="Sandy">Sandy</option>
+      <option value="Clay">Clay</option>
+      <option value="Loam">Loam</option>
+      <option value="Silt">Silt</option>
+      <option value="Chalky">Chalky</option>
+      <option value="Peaty">Peaty</option>
+    </select>
+
+    <label>Crop:</label>
+    <select name="Crop" required>
+      <option value="Cotton">Cotton</option>
+      <option value="Wheat">Wheat</option>
+      <option value="Rice">Rice</option>
+      <option value="Maize">Maize</option>
+      <option value="Barley">Barley</option>
+      <option value="Soybean">Soybean</option>
+    </select>
+
+    <label>Weather Condition:</label>
+    <select name="Weather_Condition" required>
+      <option value="Sunny">Sunny</option>
+      <option value="Cloudy">Cloudy</option>
+      <option value="Rainy">Rainy</option>
+    </select>
+
+    <label>Fertilizer Used:</label>
+    <select name="Fertilizer_Used" required>
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
+
+    <label>Irrigation Used:</label>
+    <select name="Irrigation_Used" required>
+      <option value="1">Yes</option>
+      <option value="0">No</option>
+    </select>
+
+    <label>Rainfall (mm):</label>
+    <input type="number" name="Rainfall_mm" step="0.01" required>
+
+    <label>Temperature (°C):</label>
+    <input type="number" name="Temperature_Celsius" step="0.01" required>
+
+    <label>Days to Harvest:</label>
+    <input type="number" name="Days_to_Harvest" required>
+
+    <button type="submit">Predict Yield</button>
+  </form>
+
+  {% if prediction %}
+    <div class="result">
+      🌱 Predicted Crop Yield: <strong>{{ prediction }} tons/hectare</strong>
+    </div>
+  {% endif %}
+</body>
+</html>

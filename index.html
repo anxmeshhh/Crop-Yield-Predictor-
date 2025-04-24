@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kisan Seva - Agricultural Assistance Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Decorative Elements -->
+    <div class="decorative-elements">
+        <div class="leaf leaf-1"></div>
+        <div class="leaf leaf-2"></div>
+        <div class="leaf leaf-3"></div>
+        <div class="leaf leaf-4"></div>
+        <div class="leaf leaf-5"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h1>Kisan Seva</h1>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="btn-primary">Login <i class="fas fa-user"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Enhanced Animation -->
+    <section class="hero" id="home">
+        <div class="bg-animation">
+            <div class="field-pattern"></div>
+            <div class="sun-animation"></div>
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="tractor"></div>
+            <div class="crop crop-1"></div>
+            <div class="crop crop-2"></div>
+            <div class="crop crop-3"></div>
+            <div class="crop crop-4"></div>
+            <div class="crop crop-5"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">For Indian Farmers</div>
+                <h1>Kisan Seva <span class="text-highlight">Platform</span></h1>
+                <p>Your comprehensive agricultural assistance platform designed to empower farmers with technology and insights</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn-primary">Explore Features <i class="fas fa-arrow-right"></i></a>
+                    <a href="#about" class="btn-secondary">Learn More <i class="fas fa-info-circle"></i></a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10K+</span>
+                        <span class="stat-label">Farmers</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">States</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">95%</span>
+                        <span class="stat-label">Accuracy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave"></div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="intro">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-hand-holding-seedling"></i></div>
+                <h2>Empowering Indian Agriculture</h2>
+                <p>Kisan Seva provides modern tools and insights to help farmers maximize their productivity and profitability</p>
+                <div class="section-divider">
+                    <span class="divider-icon"><i class="fas fa-leaf"></i></span>
+                </div>
+            </div>
+            <div class="intro-cards">
+                <div class="intro-card">
+                    <div class="card-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Smart Farming</h3>
+                    <p>Data-driven recommendations for optimal crop selection and management</p>
+                    <div class="card-decoration"></div>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Insights</h3>
+                    <p>Stay updated with crop prices and market trends for better decisions</p>
+                    <div class="card-decoration"></div>
+                </div>
+                <div class="intro-card">
+                    <div class="card-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Government Support</h3>
+                    <p>Access information about relevant agricultural schemes and subsidies</p>
+                    <div class="card-decoration"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section-wave"></div>
+    </section>
+
+    <!-- Features Section with Enhanced Interactive Tabs -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-tractor"></i></div>
+                <h2>Our Features</h2>
+                <p>Comprehensive tools to support every aspect of farming</p>
+                <div class="section-divider">
+                    <span class="divider-icon"><i class="fas fa-wheat-awn"></i></span>
+                </div>
+            </div>
+            
+            <div class="feature-tabs">
+                <div class="feature-tab" onclick="window.location.href='crop-yield.html'">
+                    <div class="tab-decoration"></div>
+                    <div class="tab-icon">
+                        <i class="fas fa-wheat-awn"></i>
+                    </div>
+                    <h3>Crop Yield Predictor</h3>
+                    <p>Predict your harvest yield based on various parameters</p>
+                    <div class="hover-info">
+                        <div class="hover-content">
+                            <h4>Crop Yield Predictor</h4>
+                            <p>Get accurate predictions for your expected crop yield based on soil conditions, weather patterns, and farming practices.</p>
+                            <a href="crop-yield.html" class="btn-feature">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="window.location.href='crop-price.html'">
+                    <div class="tab-decoration"></div>
+                    <div class="tab-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3>Crop Price Predictor</h3>
+                    <p>Forecast market prices for better selling decisions</p>
+                    <div class="hover-info">
+                        <div class="hover-content">
+                            <h4>Crop Price Predictor</h4>
+                            <p>Make informed decisions about when to sell your crops with our price prediction tool based on historical data and market trends.</p>
+                            <a href="crop-price.html" class="btn-feature">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="window.location.href='crop-recommendation.html'">
+                    <div class="tab-decoration"></div>
+                    <div class="tab-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Crop Recommendation</h3>
+                    <p>Get personalized crop suggestions for your land</p>
+                    <div class="hover-info">
+                        <div class="hover-content">
+                            <h4>Crop Recommendation</h4>
+                            <p>Receive tailored recommendations for which crops to plant based on your soil type, climate conditions, and market demand.</p>
+                            <a href="crop-recommendation.html" class="btn-feature">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="window.location.href='soil-nutrient.html'">
+                    <div class="tab-decoration"></div>
+                    <div class="tab-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Soil Nutrient Forecasting</h3>
+                    <p>Monitor and predict soil health for optimal farming</p>
+                    <div class="hover-info">
+                        <div class="hover-content">
+                            <h4>Soil Nutrient Forecasting</h4>
+                            <p>Track your soil's nutrient levels and receive forecasts to help you maintain optimal soil health for your crops.</p>
+                            <a href="soil-nutrient.html" class="btn-feature">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feature-tab" onclick="window.location.href='govt-scheme.html'">
+                    <div class="tab-decoration"></div>
+                    <div class="tab-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Government Scheme Recommender</h3>
+                    <p>Discover agricultural schemes you're eligible for</p>
+                    <div class="hover-info">
+                        <div class="hover-content">
+                            <h4>Government Scheme Recommender</h4>
+                            <p>Find government schemes and subsidies that you qualify for to support your farming activities and increase profitability.</p>
+                            <a href="govt-scheme.html" class="btn-feature">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-wave-alt"></div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="section-icon"><i class="fas fa-book-open"></i></div>
+                    <h2>About Kisan Seva</h2>
+                    <div class="section-divider">
+                        <span class="divider-icon"><i class="fas fa-seedling"></i></span>
+                    </div>
+                    <p>Kisan Seva is dedicated to revolutionizing Indian agriculture through technology. Our platform combines data science, agricultural expertise, and user-friendly design to provide farmers with the tools they need to succeed.</p>
+                    <p>We work closely with agricultural experts, government agencies, and farmers to ensure our platform addresses real needs and delivers practical solutions.</p>
+                    
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="feature-check"><i class="fas fa-check-circle"></i></div>
+                            <span>Data-driven farming recommendations</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check"><i class="fas fa-check-circle"></i></div>
+                            <span>Weather-based crop planning</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check"><i class="fas fa-check-circle"></i></div>
+                            <span>Market price analysis and forecasting</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check"><i class="fas fa-check-circle"></i></div>
+                            <span>Government scheme eligibility checker</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="feature-check"><i class="fas fa-check-circle"></i></div>
+                            <span>Soil health monitoring and recommendations</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn-primary">Learn More About Us <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-decoration">
+                        <div class="decoration-circle"></div>
+                        <div class="decoration-square"></div>
+                        <div class="decoration-dots"></div>
+                        <div class="decoration-plant">
+                            <div class="plant-stem"></div>
+                            <div class="plant-leaf plant-leaf-1"></div>
+                            <div class="plant-leaf plant-leaf-2"></div>
+                            <div class="plant-leaf plant-leaf-3"></div>
+                            <div class="plant-flower"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section-wave"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-quote-right"></i></div>
+                <h2>What Farmers Say</h2>
+                <p>Success stories from farmers across India</p>
+                <div class="section-divider">
+                    <span class="divider-icon"><i class="fas fa-star"></i></span>
+                </div>
+            </div>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="quote">"Kisan Seva's crop recommendation tool helped me increase my yield by 30% this season. The platform is easy to use even for someone like me who isn't tech-savvy."</p>
+                    <div class="farmer-info">
+                        <div class="farmer-avatar">
+                            <div class="avatar-placeholder">RS</div>
+                        </div>
+                        <div class="farmer-details">
+                            <p class="farmer-name">Rajesh Singh</p>
+                            <p class="farmer-location">Punjab</p>
+                        </div>
+                    </div>
+                    <div class="card-decoration"></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="quote">"I discovered a government subsidy I didn't know I was eligible for through Kisan Seva. The process was simple, and now I've received financial support for my farm."</p>
+                    <div class="farmer-info">
+                        <div class="farmer-avatar">
+                            <div class="avatar-placeholder">LD</div>
+                        </div>
+                        <div class="farmer-details">
+                            <p class="farmer-name">Lakshmi Devi</p>
+                            <p class="farmer-location">Karnataka</p>
+                        </div>
+                    </div>
+                    <div class="card-decoration"></div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="quote">"The soil nutrient forecasting feature has transformed how I manage my land. I now know exactly what my soil needs and when, saving money on unnecessary fertilizers."</p>
+                    <div class="farmer-info">
+                        <div class="farmer-avatar">
+                            <div class="avatar-placeholder">AP</div>
+                        </div>
+                        <div class="farmer-details">
+                            <p class="farmer-name">Anand Patel</p>
+                            <p class="farmer-location">Gujarat</p>
+                        </div>
+                    </div>
+                    <div class="card-decoration"></div>
+                </div>
+            </div>
+        </div>
+        <div class="section-wave-alt"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h2>Contact Us</h2>
+                <p>Have questions? We're here to help!</p>
+                <div class="section-divider">
+                    <span class="divider-icon"><i class="fas fa-phone"></i></span>
+                </div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" placeholder="Enter your name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" placeholder="Enter your email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <div class="input-with-icon textarea-icon">
+                                <i class="fas fa-comment-alt"></i>
+                                <textarea id="message" placeholder="Type your message here..."></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3><i class="fas fa-info-circle"></i> Contact Information</h3>
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Our Location</h4>
+                                <p>123 Agricultural Road, New Delhi, India</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Phone Number</h4>
+                                <p>+91 98765 43210</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Email Address</h4>
+                                <p>info@kisanseva.com</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Working Hours</h4>
+                                <p>Monday - Saturday: 9:00 AM - 6:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <h4>Connect With Us</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-decoration">
+            <div class="footer-crop footer-crop-1"></div>
+            <div class="footer-crop footer-crop-2"></div>
+            <div class="footer-crop footer-crop-3"></div>
+        </div>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Kisan Seva</h3>
+                    <p>Empowering Indian Agriculture</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-features">
+                    <h4>Our Features</h4>
+                    <ul>
+                        <li><a href="crop-yield.html"><i class="fas fa-wheat-awn"></i> Crop Yield Predictor</a></li>
+                        <li><a href="crop-price.html"><i class="fas fa-rupee-sign"></i> Crop Price Predictor</a></li>
+                        <li><a href="crop-recommendation.html"><i class="fas fa-leaf"></i> Crop Recommendation</a></li>
+                        <li><a href="soil-nutrient.html"><i class="fas fa-flask"></i> Soil Nutrient Forecasting</a></li>
+                        <li><a href="govt-scheme.html"><i class="fas fa-landmark"></i> Government Scheme Recommender</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <p>Stay updated with the latest agricultural news and tips</p>
+                    <form>
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Your Email Address">
+                            <button type="submit" class="btn-subscribe"><i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                    <div class="app-download">
+                        <p>Download Our App</p>
+                        <div class="app-buttons">
+                            <a href="#" class="app-button">
+                                <i class="fab fa-google-play"></i>
+                                <span>Google Play</span>
+                            </a>
+                            <a href="#" class="app-button">
+                                <i class="fab fa-apple"></i>
+                                <span>App Store</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kisan Seva. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Sticky navbar on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
