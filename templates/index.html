@@ -7,512 +7,542 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #4CAF50;
-      --primary-dark: #2E7D32;
-      --primary-light: #A5D6A7;
-      --secondary: #8BC34A;
-      --secondary-light: #DCEDC8;
-      --accent: #FFC107;
-      --soil: #795548;
-      --soil-light: #D7CCC8;
+      --primary: #4a8c42;
+      --primary-dark: #2e5a28;
+      --primary-light: #6fb267;
+      --secondary: #8d9331;
+      --accent: #e6b800;
+      --soil: #7d5b3c;
+      --soil-light: #a67c52;
       --light: #f9f9f9;
-      --dark: #263238;
-      --text: #37474F;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --dark: #2c3e50;
+      --text: #37474f;
+      --wheat: #f5deb3;
+      --corn: #f2c649;
     }
     
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: all 0.3s ease;
     }
     
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f5f7f5;
       color: var(--text);
       line-height: 1.6;
+      background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+        url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%234a8c42' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
       overflow-x: hidden;
+      padding: 20px;
     }
     
-    .app-container {
-      display: flex;
-      min-height: 100vh;
-    }
-    
-    .form-container {
-      flex: 1;
-      padding: 2rem;
-      max-width: 800px;
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
-    }
-    
-    .bg-pattern {
-      flex: 1;
-      background-color: rgba(165, 214, 167, 0.2);
       position: relative;
-      overflow: hidden;
-      display: none;
     }
-    
-    @media (min-width: 1200px) {
-      .bg-pattern {
-        display: block;
-      }
-    }
-    
+
+    /* Header styling with animated elements */
     .header {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow);
+      text-align: center;
+      padding: 20px 0;
       position: relative;
-      overflow: hidden;
-    }
-    
-    .header h1 {
-      display: flex;
-      align-items: center;
-      font-size: 1.8rem;
-      margin-bottom: 0.5rem;
-    }
-    
-    .header h1 i {
-      margin-right: 0.8rem;
-      font-size: 2rem;
-    }
-    
-    .header p {
-      opacity: 0.9;
-      max-width: 600px;
+      margin-bottom: 30px;
     }
     
     .header::before {
       content: "";
       position: absolute;
-      top: -50%;
-      right: -50%;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
-      z-index: 0;
-      animation: pulse 15s infinite;
-    }
-    
-    .header::after {
-      content: "";
-      position: absolute;
-      bottom: -30%;
-      left: -10%;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
-      z-index: 0;
-      animation: pulse 10s infinite 2s;
-    }
-    
-    @keyframes pulse {
-      0% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.5); opacity: 0.2; }
-      100% { transform: scale(1); opacity: 0.5; }
-    }
-    
-    .form-group {
-      margin-bottom: 1.5rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      color: var(--dark);
-      font-size: 1.1rem;
-    }
-    
-    .dropdown {
-      position: relative;
-      width: 100%;
-    }
-    
-    .dropdown-select {
-      display: flex;
-      align-items: center;
-      width: 100%;
-      padding: 0.8rem 1rem;
-      background: white;
-      border: 2px solid #E0E0E0;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .dropdown-select:hover {
-      border-color: var(--primary-light);
-    }
-    
-    .dropdown-select.active {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-    }
-    
-    .dropdown-select i {
-      margin-right: 0.8rem;
-      color: var(--primary);
-      font-size: 1.2rem;
-      width: 24px;
-      text-align: center;
-    }
-    
-    .dropdown-select .placeholder {
-      color: #9E9E9E;
-      flex: 1;
-    }
-    
-    .dropdown-select .value {
-      flex: 1;
-      color: var(--text);
-    }
-    
-    .dropdown-select .arrow {
-      margin-left: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-    
-    .dropdown-select.active .arrow {
-      transform: rotate(180deg);
-    }
-    
-    .dropdown-menu {
-      position: absolute;
-      top: calc(100% + 5px);
-      left: 0;
-      width: 100%;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      z-index: 10;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-      opacity: 0;
-    }
-    
-    .dropdown-menu.active {
-      max-height: 300px;
-      opacity: 1;
-    }
-    
-    .dropdown-item {
-      padding: 0.8rem 1rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-      display: flex;
-      align-items: center;
-    }
-    
-    .dropdown-item:hover {
-      background: var(--secondary-light);
-    }
-    
-    .dropdown-item i {
-      margin-right: 0.8rem;
-      color: var(--primary);
-      font-size: 1.2rem;
-      width: 24px;
-      text-align: center;
-    }
-    
-    .option-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-    
-    .option-card {
-      background: white;
-      border: 2px solid #E0E0E0;
-      border-radius: 10px;
-      padding: 1rem;
-      text-align: center;
-      cursor: pointer;
-      transition: var(--transition);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .option-card:hover {
-      border-color: var(--primary-light);
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .option-card.selected {
-      border-color: var(--primary);
-      background-color: rgba(76, 175, 80, 0.05);
-      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-    }
-    
-    .option-card i {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-      transition: transform 0.3s ease;
-    }
-    
-    .option-card:hover i {
-      transform: scale(1.1);
-    }
-    
-    .option-card.selected i {
-      animation: bounce 0.5s;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
-    
-    .option-card span {
-      display: block;
-      font-weight: 500;
-    }
-    
-    .option-card::after {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(76, 175, 80, 0.2) 0%, rgba(76, 175, 80, 0) 70%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
-    
-    .option-card.selected::after {
-      opacity: 1;
-    }
-    
-    .toggle-container {
-      display: flex;
-      align-items: center;
-      margin-top: 0.5rem;
-    }
-    
-    .toggle {
-      position: relative;
-      width: 60px;
-      height: 34px;
-      margin-right: 1rem;
-    }
-    
-    .toggle input {
-      opacity: 0;
-      width: 0;
-      height: 0;
-    }
-    
-    .toggle-slider {
-      position: absolute;
-      cursor: pointer;
       top: 0;
       left: 0;
       right: 0;
-      bottom: 0;
-      background-color: #E0E0E0;
-      transition: var(--transition);
-      border-radius: 34px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(74, 140, 66, 0.1) 50%, transparent 100%);
+      animation: shine 8s infinite linear;
+      z-index: -1;
     }
     
-    .toggle-slider:before {
-      position: absolute;
+    @keyframes shine {
+      0% { background-position: -500px 0; }
+      100% { background-position: 500px 0; }
+    }
+    
+    h1 {
+      color: var(--primary-dark);
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 i {
+      margin-right: 15px;
+      display: inline-block;
+      animation: growAndSway 4s ease-in-out infinite;
+      transform-origin: bottom center;
+      color: var(--primary);
+    }
+    
+    @keyframes growAndSway {
+      0% { transform: scale(1) rotate(-5deg); }
+      25% { transform: scale(1.1) rotate(0deg); }
+      50% { transform: scale(1.15) rotate(5deg); }
+      75% { transform: scale(1.1) rotate(0deg); }
+      100% { transform: scale(1) rotate(-5deg); }
+    }
+    
+    .subtitle {
+      color: var(--secondary);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .subtitle::after {
       content: "";
-      height: 26px;
-      width: 26px;
-      left: 4px;
-      bottom: 4px;
-      background-color: white;
-      transition: var(--transition);
-      border-radius: 50%;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--primary), transparent);
+      border-radius: 3px;
     }
-    
-    input:checked + .toggle-slider {
-      background-color: var(--primary);
-    }
-    
-    input:checked + .toggle-slider:before {
-      transform: translateX(26px);
-    }
-    
-    .toggle-label {
-      font-weight: 500;
-      color: var(--text);
-    }
-    
-    .input-group {
+
+    /* Main content styling */
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
       position: relative;
     }
     
-    .input-field {
-      width: 100%;
-      padding: 0.8rem 1rem 0.8rem 3rem;
-      border: 2px solid #E0E0E0;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: var(--transition);
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    
-    .input-field:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
-    }
-    
-    .input-icon {
-      position: absolute;
-      left: 1rem;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--primary);
-      font-size: 1.2rem;
-    }
-    
-    .btn-predict {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 1rem;
-      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
-      transition: var(--transition);
+    /* Form styling with enhanced agricultural elements */
+    form {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       position: relative;
       overflow: hidden;
+      animation: fadeInUp 0.8s ease-out;
+      border: 1px solid rgba(74, 140, 66, 0.2);
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    form::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
+    }
+    
+    .form-title {
+      font-size: 1.5rem;
+      color: var(--primary-dark);
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(74, 140, 66, 0.2);
+      display: flex;
+      align-items: center;
+    }
+    
+    .form-title i {
+      margin-right: 10px;
+      color: var(--primary);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 22px;
+    }
+    
+    label i {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      color: var(--primary);
+      font-size: 0.9rem;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+      color: var(--dark);
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(74, 140, 66, 0.2), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      transform: translateY(-2px);
+    }
+    
+    input:hover, select:hover {
+      border-color: var(--primary-light);
+    }
+    
+    /* Custom select styling */
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%234a8c42' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 20px;
+      padding-right: 40px;
+    }
+    
+    /* Button styling with enhanced animations */
+    button {
+      margin-top: 10px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      font-weight: 600;
+      width: 100%;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(74, 140, 66, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 10px;
     }
     
-    .btn-predict:hover {
+    button:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
       transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+      box-shadow: 0 6px 20px rgba(74, 140, 66, 0.4);
     }
     
-    .btn-predict:active {
+    button:active {
       transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(74, 140, 66, 0.3);
     }
     
-    .btn-predict i {
-      margin-right: 0.8rem;
-      font-size: 1.2rem;
-    }
-    
-    .btn-predict::after {
+    button::before {
       content: "";
       position: absolute;
       top: 0;
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: 0.5s;
-    }
-    
-    .btn-predict:hover::after {
-      left: 100%;
-    }
-    
-    /* Decorative elements */
-    .bg-pattern .cloud {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      filter: blur(3px);
-    }
-    
-    .bg-pattern .cloud-1 {
-      width: 100px;
-      height: 60px;
-      top: 10%;
-      left: 20%;
-      animation: float 20s infinite linear;
-    }
-    
-    .bg-pattern .cloud-2 {
-      width: 150px;
-      height: 90px;
-      top: 30%;
-      right: 10%;
-      animation: float 25s infinite linear reverse;
-    }
-    
-    .bg-pattern .cloud-3 {
-      width: 80px;
-      height: 50px;
-      bottom: 20%;
-      left: 30%;
-      animation: float 18s infinite linear;
-    }
-    
-    @keyframes float {
-      0% { transform: translateX(0); }
-      50% { transform: translateX(100px); }
-      100% { transform: translateX(0); }
-    }
-    
-    .bg-pattern .plant {
-      position: absolute;
-      bottom: 0;
       z-index: 1;
     }
     
-    .bg-pattern .plant-1 {
+    button:hover::before {
+      left: 100%;
+    }
+    
+    button i {
+      font-size: 1.2rem;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-5px); }
+      60% { transform: translateY(-3px); }
+    }
+    
+    /* Output container styling */
+    .output-container {
+      flex: 1;
+      min-width: 300px;
+      animation: fadeInRight 0.8s ease-out;
+      animation-delay: 0.2s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .result {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      border-left: 6px solid var(--primary);
+      border: 1px solid rgba(74, 140, 66, 0.2);
+    }
+    
+    .result::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
+    }
+    
+    .result strong {
+      display: block;
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin: 15px 0;
+      font-weight: 700;
+      position: relative;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result strong::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
+      border-radius: 2px;
+    }
+    
+    .result-icon {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      display: inline-block;
+      animation: growRotate 3s ease infinite;
+    }
+    
+    @keyframes growRotate {
+      0% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.1) rotate(5deg); }
+      50% { transform: scale(1.15) rotate(0deg); }
+      75% { transform: scale(1.1) rotate(-5deg); }
+      100% { transform: scale(1) rotate(0deg); }
+    }
+    
+    .explanation {
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(74, 140, 66, 0.2);
+    }
+    
+    .explanation::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, var(--secondary), var(--primary-light));
+    }
+    
+    .explanation-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(74, 140, 66, 0.2);
+    }
+    
+    .explanation-icon {
+      font-size: 1.8rem;
+      color: var(--secondary);
+      margin-right: 15px;
+      animation: pulse 2s infinite;
+    }
+    
+    .explanation-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 0;
+    }
+    
+    .explanation-content {
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+    
+    .explanation h2, .explanation h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: var(--primary-dark);
+      font-size: 1.2rem;
+    }
+    
+    .explanation ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+    
+    .explanation li {
+      margin-bottom: 8px;
+      position: relative;
+      list-style-type: none;
+      padding-left: 25px;
+    }
+    
+    .explanation li::before {
+      content: "\f06c";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: var(--primary);
+    }
+    
+    .advice {
+      background: linear-gradient(135deg, rgba(232, 245, 233, 0.8), rgba(232, 245, 233, 0.6));
+      border-left: 6px solid var(--primary);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .advice::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a8c42' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      z-index: -1;
+    }
+    
+    .advice h3 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .advice h3 i {
+      margin-right: 10px;
+      animation: pulse 2s infinite;
+    }
+    
+    /* Decorative elements */
+    .decorative-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .plant {
+      position: absolute;
+      width: 60px;
+      height: 120px;
+      opacity: 0.15;
+    }
+    
+    .plant-1 {
+      top: 10%;
+      left: 5%;
+      transform: rotate(-5deg);
+    }
+    
+    .plant-2 {
+      top: 30%;
+      right: 5%;
+      transform: rotate(5deg);
+    }
+    
+    .plant-3 {
+      bottom: 10%;
       left: 10%;
-      height: 200px;
-      width: 100px;
-    }
-    
-    .bg-pattern .plant-2 {
-      right: 15%;
-      height: 250px;
-      width: 120px;
-    }
-    
-    .bg-pattern .plant-3 {
-      left: 40%;
-      height: 180px;
-      width: 90px;
+      transform: rotate(-10deg);
     }
     
     .plant-stem {
       position: absolute;
       bottom: 0;
       left: 50%;
-      width: 6px;
-      height: 0;
-      background-color: var(--primary-dark);
       transform: translateX(-50%);
-      animation: grow-stem 3s forwards;
+      width: 4px;
+      height: 70px;
+      background-color: var(--primary-dark);
+      animation: sway 8s ease-in-out infinite;
+      transform-origin: bottom center;
     }
     
-    @keyframes grow-stem {
-      to { height: 70%; }
+    @keyframes sway {
+      0%, 100% { transform: translateX(-50%) rotate(-2deg); }
+      50% { transform: translateX(-50%) rotate(2deg); }
     }
     
     .plant-leaf {
@@ -521,317 +551,237 @@
       height: 15px;
       background-color: var(--primary);
       border-radius: 50%;
-      opacity: 0;
+      animation: leafGrow 8s ease-in-out infinite;
+      transform-origin: bottom center;
     }
     
-    .plant-1 .plant-leaf-1 {
-      top: 40%;
-      left: 0;
+    @keyframes leafGrow {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    .plant-leaf-1 {
+      top: 20px;
+      left: 15px;
       transform: rotate(-30deg);
-      animation: grow-leaf 0.5s forwards 1s;
     }
     
-    .plant-1 .plant-leaf-2 {
-      top: 50%;
-      right: 0;
+    .plant-leaf-2 {
+      top: 30px;
+      right: 15px;
       transform: rotate(30deg);
-      animation: grow-leaf 0.5s forwards 1.5s;
     }
     
-    .plant-1 .plant-leaf-3 {
-      top: 30%;
-      right: 0;
-      transform: rotate(45deg);
-      animation: grow-leaf 0.5s forwards 2s;
+    .plant-leaf-3 {
+      top: 10px;
+      left: 25px;
+      transform: rotate(-15deg);
     }
     
-    .plant-1 .plant-leaf-4 {
-      top: 20%;
-      left: 0;
-      transform: rotate(-45deg);
-      animation: grow-leaf 0.5s forwards 2.5s;
+    .plant-leaf-4 {
+      top: 50px;
+      right: 20px;
+      transform: rotate(20deg);
     }
     
-    .plant-2 .plant-leaf-1 {
-      top: 60%;
-      left: 0;
-      transform: rotate(-30deg);
-      animation: grow-leaf 0.5s forwards 1.2s;
-    }
-    
-    .plant-2 .plant-leaf-2 {
-      top: 70%;
-      right: 0;
-      transform: rotate(30deg);
-      animation: grow-leaf 0.5s forwards 1.7s;
-    }
-    
-    .plant-2 .plant-leaf-3 {
-      top: 50%;
-      right: 0;
-      transform: rotate(45deg);
-      animation: grow-leaf 0.5s forwards 2.2s;
-    }
-    
-    .plant-2 .plant-leaf-4 {
-      top: 40%;
-      left: 0;
-      transform: rotate(-45deg);
-      animation: grow-leaf 0.5s forwards 2.7s;
-    }
-    
-    .plant-2 .plant-leaf-5 {
-      top: 30%;
-      right: 0;
-      transform: rotate(30deg);
-      animation: grow-leaf 0.5s forwards 3.2s;
-    }
-    
-    .plant-3 .plant-leaf-1 {
-      top: 50%;
-      left: 0;
-      transform: rotate(-30deg);
-      animation: grow-leaf 0.5s forwards 1.4s;
-    }
-    
-    .plant-3 .plant-leaf-2 {
-      top: 60%;
-      right: 0;
-      transform: rotate(30deg);
-      animation: grow-leaf 0.5s forwards 1.9s;
-    }
-    
-    .plant-3 .plant-leaf-3 {
-      top: 40%;
-      right: 0;
-      transform: rotate(45deg);
-      animation: grow-leaf 0.5s forwards 2.4s;
-    }
-    
-    @keyframes grow-leaf {
-      from { 
-        opacity: 0;
-        transform: scale(0) rotate(0deg);
-      }
-      to { 
-        opacity: 1;
-        transform: scale(1) rotate(var(--rotate, -30deg));
-      }
-    }
-    
-    .plant-flower {
+    .cloud {
       position: absolute;
-      top: 10%;
-      left: 50%;
-      transform: translateX(-50%) scale(0);
-      width: 30px;
-      height: 30px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      animation: grow-flower 1s forwards 3s;
+      width: 150px;
+      height: 60px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50px;
+      top: 15%;
+      right: 10%;
+      animation: float 30s linear infinite;
+      opacity: 0.5;
     }
     
-    @keyframes grow-flower {
-      from { transform: translateX(-50%) scale(0); }
-      to { transform: translateX(-50%) scale(1); }
+    @keyframes float {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-100px); }
+      100% { transform: translateX(0); }
     }
     
-    .plant-flower::after {
+    .cloud::before, .cloud::after {
       content: "";
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 10px;
-      height: 10px;
-      background-color: var(--primary-dark);
+      background-color: rgba(255, 255, 255, 0.8);
       border-radius: 50%;
+    }
+    
+    .cloud::before {
+      width: 80px;
+      height: 80px;
+      top: -30px;
+      left: 25px;
+    }
+    
+    .cloud::after {
+      width: 60px;
+      height: 60px;
+      top: -20px;
+      right: 25px;
     }
     
     .sun {
       position: absolute;
       top: 10%;
-      right: 10%;
+      left: 10%;
       width: 80px;
       height: 80px;
-      background: radial-gradient(circle, var(--accent), rgba(255, 193, 7, 0.7));
+      background: radial-gradient(circle, var(--accent), rgba(230, 184, 0, 0.5));
       border-radius: 50%;
-      box-shadow: 0 0 30px rgba(255, 193, 7, 0.5);
-      animation: pulse-sun 5s infinite alternate;
+      animation: glow 8s ease-in-out infinite;
+      opacity: 0.3;
     }
     
-    @keyframes pulse-sun {
-      from { transform: scale(1); box-shadow: 0 0 30px rgba(255, 193, 7, 0.5); }
-      to { transform: scale(1.1); box-shadow: 0 0 50px rgba(255, 193, 7, 0.7); }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px var(--accent); }
+      50% { box-shadow: 0 0 40px var(--accent); }
+    }
+    
+    .rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0.1;
     }
     
     .raindrop {
       position: absolute;
       width: 2px;
-      height: 20px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(30, 144, 255, 0.5));
+      height: 15px;
+      background: linear-gradient(to bottom, transparent, #4a8c42);
       border-radius: 0 0 5px 5px;
-      animation: rain 1s linear infinite;
+      animation: rain 1.5s linear infinite;
       opacity: 0;
     }
     
     @keyframes rain {
-      from { transform: translateY(-100px); opacity: 0; }
-      50% { opacity: 0.7; }
-      to { transform: translateY(100px); opacity: 0; }
+      0% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
     }
     
-    /* Result section */
-    .result-container {
-      margin-top: 2rem;
-      padding: 2rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: var(--transition);
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+      
+      body {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .subtitle {
+        font-size: 1rem;
+      }
+      
+      .form-title {
+        font-size: 1.3rem;
+      }
+      
+      .result strong {
+        font-size: 2rem;
+      }
+      
+      .explanation-title {
+        font-size: 1.2rem;
+      }
+      
+      .cloud, .sun {
+        display: none;
+      }
     }
     
-    .result-container.active {
-      opacity: 1;
-      transform: translateY(0);
+    /* Field row styling for better organization */
+    .field-row {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 0;
     }
     
-    .result-icon {
-      font-size: 3rem;
+    .field-row .form-group {
+      flex: 1;
+    }
+    
+    /* Crop icons for select options */
+    .crop-icon {
+      margin-right: 8px;
       color: var(--primary);
-      margin-bottom: 1rem;
-      animation: bounce 2s infinite;
     }
     
-    .result-value {
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--primary-dark);
-      margin: 1rem 0;
-      position: relative;
-      display: inline-block;
-    }
-    
-    .result-value::after {
-      content: "";
+    /* Weather animation container */
+    .weather-animation {
       position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
-      border-radius: 2px;
-    }
-    
-    .result-unit {
-      font-size: 1.2rem;
-      color: var(--text);
-      opacity: 0.8;
-    }
-    
-    .result-details {
-      margin-top: 2rem;
-      text-align: left;
-    }
-    
-    .result-details h3 {
-      color: var(--primary-dark);
-      margin-bottom: 1rem;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.8);
       display: flex;
       align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      animation: float 5s ease-in-out infinite;
     }
     
-    .result-details h3 i {
-      margin-right: 0.8rem;
-    }
-    
-    .result-details ul {
-      list-style: none;
-      padding: 0;
-    }
-    
-    .result-details li {
-      margin-bottom: 0.8rem;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    
-    .result-details li::before {
-      content: "\f06c";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      position: absolute;
-      left: 0;
+    .weather-animation i {
+      font-size: 1.5rem;
       color: var(--primary);
     }
     
-    .recommendation-box {
-      margin-top: 1.5rem;
-      padding: 1.5rem;
-      background-color: var(--secondary-light);
-      border-left: 4px solid var(--primary);
-      border-radius: 8px;
-    }
-    
-    /* Loading animation */
+    /* Loading animation for form submission */
     .loading {
+      display: none;
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(255,255,255,0.9);
-      display: flex;
+      background: rgba(255, 255, 255, 0.8);
+      z-index: 1000;
       justify-content: center;
       align-items: center;
-      z-index: 1000;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     
     .loading.active {
-      opacity: 1;
-      visibility: visible;
+      display: flex;
     }
     
-    .loading-animation {
+    .loading-spinner {
+      width: 80px;
+      height: 80px;
       position: relative;
-      width: 100px;
-      height: 100px;
     }
     
-    .loading-circle {
+    .loading-spinner::before {
+      content: "";
       position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      border: 5px solid transparent;
-      border-top-color: var(--primary);
       border-radius: 50%;
+      border: 6px solid rgba(74, 140, 66, 0.2);
+      border-top-color: var(--primary);
       animation: spin 1s linear infinite;
-    }
-    
-    .loading-circle:nth-child(2) {
-      width: 80%;
-      height: 80%;
-      top: 10%;
-      left: 10%;
-      border-top-color: var(--secondary);
-      animation-duration: 1.3s;
-      animation-direction: reverse;
-    }
-    
-    .loading-circle:nth-child(3) {
-      width: 60%;
-      height: 60%;
-      top: 20%;
-      left: 20%;
-      border-top-color: var(--accent);
-      animation-duration: 1.6s;
     }
     
     @keyframes spin {
@@ -839,705 +789,349 @@
       100% { transform: rotate(360deg); }
     }
     
-    .loading-text {
-      margin-top: 1.5rem;
-      font-size: 1.2rem;
-      color: var(--primary-dark);
-      font-weight: 600;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .form-container {
-        padding: 1rem;
-      }
-      
-      .header {
-        padding: 1.2rem;
-      }
-      
-      .option-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      
-      .result-value {
-        font-size: 2rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .option-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-    
-    /* Soil type icons */
-    .soil-icon {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-bottom: 0.5rem;
-      position: relative;
-    }
-    
-    .soil-sandy {
-      background: linear-gradient(to bottom, #E0C9A6, #D2B48C);
-    }
-    
-    .soil-sandy::after {
-      content: "";
+    /* Soil texture background for form */
+    .soil-texture {
       position: absolute;
-      top: 0;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.2) 2px, transparent 2px),
-                        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.2) 2px, transparent 2px),
-                        radial-gradient(circle at 40% 80%, rgba(255,255,255,0.2) 2px, transparent 2px),
-                        radial-gradient(circle at 80% 40%, rgba(255,255,255,0.2) 2px, transparent 2px);
-      border-radius: 50%;
+      height: 20px;
+      background: linear-gradient(to bottom, transparent, rgba(125, 91, 60, 0.1));
+      z-index: 0;
     }
     
-    .soil-clay {
-      background: linear-gradient(to bottom, #A65E44, #8B4513);
-    }
-    
-    .soil-clay::after {
-      content: "";
+    /* Growing plant animation for submit button */
+    .grow-plant {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(45deg, rgba(0,0,0,0.1) 25%, transparent 25%, transparent 50%, 
-                        rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.1) 75%, transparent 75%, transparent);
-      background-size: 8px 8px;
-      border-radius: 50%;
-    }
-    
-    .soil-loam {
-      background: linear-gradient(to bottom, #8B7355, #6F4E37);
-    }
-    
-    .soil-loam::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 3px, transparent 3px),
-                        radial-gradient(circle at 70% 60%, rgba(255,255,255,0.1) 3px, transparent 3px),
-                        radial-gradient(circle at 40% 80%, rgba(139,115,85,0.8) 3px, transparent 3px),
-                        radial-gradient(circle at 80% 40%, rgba(139,115,85,0.8) 3px, transparent 3px);
-      background-size: 10px 10px;
-      border-radius: 50%;
-    }
-    
-    .soil-silt {
-      background: linear-gradient(to bottom, #C2B280, #A89968);
-    }
-    
-    .soil-silt::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px),
-                        linear-gradient(0deg, rgba(255,255,255,0.1) 1px, transparent 1px);
-      background-size: 5px 5px;
-      border-radius: 50%;
-    }
-      1px, transparent 1px);
-      background-size: 5px 5px;
-      border-radius: 50%;
-    }
-    
-    .soil-chalky {
-      background: linear-gradient(to bottom, #E5E5E5, #D3D3D3);
-    }
-    
-    .soil-chalky::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.8) 2px, transparent 2px),
-                        radial-gradient(circle at 60% 40%, rgba(255,255,255,0.8) 2px, transparent 2px),
-                        radial-gradient(circle at 40% 60%, rgba(255,255,255,0.8) 2px, transparent 2px),
-                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.8) 2px, transparent 2px);
-      background-size: 10px 10px;
-      border-radius: 50%;
-    }
-    
-    .soil-peaty {
-      background: linear-gradient(to bottom, #3D2B1F, #2F1E16);
-    }
-    
-    .soil-peaty::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: linear-gradient(45deg, rgba(0,0,0,0.3) 25%, transparent 25%, transparent 50%, 
-                        rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.3) 75%, transparent 75%, transparent);
-      background-size: 6px 6px;
-      border-radius: 50%;
-    }
-    
-    /* Weather animations */
-    .weather-sunny {
-      position: relative;
-    }
-    
-    .weather-sunny i {
-      color: var(--accent);
-      animation: rotate-sun 10s linear infinite;
-    }
-    
-    @keyframes rotate-sun {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    .weather-cloudy i {
-      animation: cloud-float 3s ease-in-out infinite alternate;
-    }
-    
-    @keyframes cloud-float {
-      from { transform: translateY(0); }
-      to { transform: translateY(-5px); }
-    }
-    
-    .weather-rainy {
-      position: relative;
-    }
-    
-    .weather-rainy::after {
-      content: "";
-      position: absolute;
-      top: 100%;
+      bottom: 100%;
       left: 50%;
-      width: 2px;
-      height: 10px;
-      background: #4FC3F7;
-      border-radius: 0 0 2px 2px;
-      animation: rain-drop 1.5s infinite linear;
-      opacity: 0;
+      transform: translateX(-50%);
+      width: 20px;
+      height: 0;
+      background-color: var(--primary);
+      transition: height 0.5s ease;
+      z-index: -1;
     }
     
-    @keyframes rain-drop {
-      0% { transform: translateY(-5px); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(15px); opacity: 0; }
+    button:hover .grow-plant {
+      height: 30px;
     }
     
-    /* Crop icons with animations */
-    .crop-icon {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      margin-bottom: 0.5rem;
-    }
-    
-    .crop-wheat {
-      position: relative;
+    /* Wheat decoration */
+    .wheat-decoration {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
       width: 30px;
-      height: 40px;
-      margin: 0 auto;
+      height: 60px;
+      opacity: 0.2;
+      transform: rotate(15deg);
     }
     
-    .crop-wheat::before {
-      content: "";
+    .wheat-stem {
       position: absolute;
       bottom: 0;
       left: 50%;
-      width: 2px;
-      height: 30px;
-      background-color: var(--primary-dark);
       transform: translateX(-50%);
+      width: 2px;
+      height: 50px;
+      background-color: var(--wheat);
     }
     
-    .crop-wheat::after {
-      content: "";
+    .wheat-head {
       position: absolute;
       top: 0;
       left: 50%;
-      width: 20px;
-      height: 15px;
-      background-color: var(--accent);
-      border-radius: 50% 50% 0 0;
       transform: translateX(-50%);
+      width: 15px;
+      height: 25px;
+      background-color: var(--wheat);
+      border-radius: 30% 30% 0 0;
     }
     
-    .crop-wheat span {
+    .wheat-head::before, .wheat-head::after {
+      content: "";
       position: absolute;
-      width: 8px;
-      height: 3px;
-      background-color: var(--accent);
-      border-radius: 3px;
+      width: 5px;
+      height: 10px;
+      background-color: var(--wheat);
+      border-radius: 50%;
     }
     
-    .crop-wheat span:nth-child(1) {
-      top: 8px;
-      left: 5px;
+    .wheat-head::before {
+      top: 5px;
+      left: -3px;
       transform: rotate(-30deg);
     }
     
-    .crop-wheat span:nth-child(2) {
-      top: 8px;
-      right: 5px;
+    .wheat-head::after {
+      top: 5px;
+      right: -3px;
       transform: rotate(30deg);
-    }
-    
-    .crop-wheat span:nth-child(3) {
-      top: 14px;
-      left: 5px;
-      transform: rotate(-30deg);
-    }
-    
-    .crop-wheat span:nth-child(4) {
-      top: 14px;
-      right: 5px;
-      transform: rotate(30deg);
-    }
-    
-    .option-card:hover .crop-wheat span {
-      animation: wheat-sway 1s infinite alternate;
-    }
-    
-    @keyframes wheat-sway {
-      from { transform: rotate(-30deg); }
-      to { transform: rotate(-40deg); }
-    }
-    
-    .option-card:hover .crop-wheat span:nth-child(2),
-    .option-card:hover .crop-wheat span:nth-child(4) {
-      animation: wheat-sway-right 1s infinite alternate;
-    }
-    
-    @keyframes wheat-sway-right {
-      from { transform: rotate(30deg); }
-      to { transform: rotate(40deg); }
     }
   </style>
 </head>
 <body>
-  <div class="app-container">
-    <div class="form-container">
-      <div class="header">
-        <h1><i class="fas fa-seedling"></i> Crop Yield Prediction</h1>
-        <p>Enter your farming details to get accurate yield predictions and personalized recommendations.</p>
-      </div>
-      
-      <form id="prediction-form" action="/predict" method="POST">
-        <div class="form-group">
-          <label>Region</label>
-          <div class="dropdown" id="region-dropdown">
-            <div class="dropdown-select">
-              <i class="fas fa-map-marker-alt"></i>
-              <span class="placeholder">Select your region</span>
-              <i class="fas fa-chevron-down arrow"></i>
-            </div>
-            <div class="dropdown-menu">
-              <div class="dropdown-item" data-value="East">
-                <i class="fas fa-sun-plant-wilt"></i>
-                East
-              </div>
-              <div class="dropdown-item" data-value="North">
-                <i class="fas fa-mountain"></i>
-                North
-              </div>
-              <div class="dropdown-item" data-value="South">
-                <i class="fas fa-water"></i>
-                South
-              </div>
-              <div class="dropdown-item" data-value="West">
-                <i class="fas fa-wind"></i>
-                West
-              </div>
-            </div>
-            <input type="hidden" name="Region" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label>Soil Type</label>
-          <div class="dropdown" id="soil-dropdown">
-            <div class="dropdown-select">
-              <i class="fas fa-layer-group"></i>
-              <span class="placeholder">Select soil type</span>
-              <i class="fas fa-chevron-down arrow"></i>
-            </div>
-            <div class="dropdown-menu">
-              <div class="dropdown-item" data-value="Sandy">
-                <div class="soil-icon soil-sandy"></div>
-                Sandy
-              </div>
-              <div class="dropdown-item" data-value="Clay">
-                <div class="soil-icon soil-clay"></div>
-                Clay
-              </div>
-              <div class="dropdown-item" data-value="Loam">
-                <div class="soil-icon soil-loam"></div>
-                Loam
-              </div>
-              <div class="dropdown-item" data-value="Silt">
-                <div class="soil-icon soil-silt"></div>
-                Silt
-              </div>
-              <div class="dropdown-item" data-value="Chalky">
-                <div class="soil-icon soil-chalky"></div>
-                Chalky
-              </div>
-              <div class="dropdown-item" data-value="Peaty">
-                <div class="soil-icon soil-peaty"></div>
-                Peaty
-              </div>
-            </div>
-            <input type="hidden" name="Soil_Type" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label>Crop Type</label>
-          <div class="option-grid" id="crop-options">
-            <div class="option-card" data-value="Cotton">
-              <i class="fas fa-tshirt"></i>
-              <span>Cotton</span>
-            </div>
-            <div class="option-card" data-value="Wheat">
-              <div class="crop-wheat">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span>Wheat</span>
-            </div>
-            <div class="option-card" data-value="Rice">
-              <i class="fas fa-seedling"></i>
-              <span>Rice</span>
-            </div>
-            <div class="option-card" data-value="Maize">
-              <i class="fas fa-corn"></i>
-              <span>Maize</span>
-            </div>
-            <div class="option-card" data-value="Barley">
-              <i class="fas fa-wheat-awn"></i>
-              <span>Barley</span>
-            </div>
-            <div class="option-card" data-value="Soybean">
-              <i class="fas fa-leaf"></i>
-              <span>Soybean</span>
-            </div>
-          </div>
-          <input type="hidden" name="Crop" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Weather Condition</label>
-          <div class="option-grid" id="weather-options">
-            <div class="option-card weather-sunny" data-value="Sunny">
-              <i class="fas fa-sun"></i>
-              <span>Sunny</span>
-            </div>
-            <div class="option-card weather-cloudy" data-value="Cloudy">
-              <i class="fas fa-cloud"></i>
-              <span>Cloudy</span>
-            </div>
-            <div class="option-card weather-rainy" data-value="Rainy">
-              <i class="fas fa-cloud-rain"></i>
-              <span>Rainy</span>
-            </div>
-          </div>
-          <input type="hidden" name="Weather_Condition" required>
-        </div>
-        
-        <div class="form-group">
-          <label>Fertilizer Used</label>
-          <div class="toggle-container">
-            <label class="toggle">
-              <input type="checkbox" id="fertilizer-toggle">
-              <span class="toggle-slider"></span>
-            </label>
-            <span class="toggle-label" id="fertilizer-label">No</span>
-          </div>
-          <input type="hidden" name="Fertilizer_Used" value="0">
-        </div>
-        
-        <div class="form-group">
-          <label>Irrigation Used</label>
-          <div class="toggle-container">
-            <label class="toggle">
-              <input type="checkbox" id="irrigation-toggle">
-              <span class="toggle-slider"></span>
-            </label>
-            <span class="toggle-label" id="irrigation-label">No</span>
-          </div>
-          <input type="hidden" name="Irrigation_Used" value="0">
-        </div>
-        
-        <div class="form-group">
-          <label>Rainfall (mm)</label>
-          <div class="input-group">
-            <i class="fas fa-cloud-rain input-icon"></i>
-            <input type="number" name="Rainfall_mm" class="input-field" step="0.01" placeholder="Enter rainfall in mm" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label>Temperature (°C)</label>
-          <div class="input-group">
-            <i class="fas fa-temperature-high input-icon"></i>
-            <input type="number" name="Temperature_Celsius" class="input-field" step="0.01" placeholder="Enter temperature in °C" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label>Days to Harvest</label>
-          <div class="input-group">
-            <i class="fas fa-calendar-alt input-icon"></i>
-            <input type="number" name="Days_to_Harvest" class="input-field" placeholder="Enter days to harvest" required>
-          </div>
-        </div>
-        
-        <div class="form-group">
-          <label>Language</label>
-          <div class="dropdown" id="language-dropdown">
-            <div class="dropdown-select">
-              <i class="fas fa-language"></i>
-              <span class="value">English</span>
-              <i class="fas fa-chevron-down arrow"></i>
-            </div>
-            <div class="dropdown-menu">
-              <div class="dropdown-item" data-value="English">
-                <i class="fas fa-flag"></i>
-                English
-              </div>
-              <div class="dropdown-item" data-value="Hindi">
-                <i class="fas fa-flag"></i>
-                Hindi
-              </div>
-              <div class="dropdown-item" data-value="Tamil">
-                <i class="fas fa-flag"></i>
-                Tamil
-              </div>
-            </div>
-            <input type="hidden" name="language" value="English" required>
-          </div>
-        </div>
-        
-        <button type="submit" class="btn-predict">
-          <i class="fas fa-chart-line"></i>
-          Predict Yield
-        </button>
-      </form>
-      
-      <div class="result-container" id="result-container">
-        <!-- Results will be displayed here after prediction -->
-      </div>
-    </div>
-    
-    <div class="bg-pattern">
-      <div class="cloud cloud-1"></div>
-      <div class="cloud cloud-2"></div>
-      <div class="cloud cloud-3"></div>
-      <div class="sun"></div>
-      
+  <div class="container">
+    <div class="decorative-elements">
       <div class="plant plant-1">
         <div class="plant-stem"></div>
         <div class="plant-leaf plant-leaf-1"></div>
         <div class="plant-leaf plant-leaf-2"></div>
         <div class="plant-leaf plant-leaf-3"></div>
         <div class="plant-leaf plant-leaf-4"></div>
-        <div class="plant-flower"></div>
       </div>
-      
       <div class="plant plant-2">
         <div class="plant-stem"></div>
         <div class="plant-leaf plant-leaf-1"></div>
         <div class="plant-leaf plant-leaf-2"></div>
         <div class="plant-leaf plant-leaf-3"></div>
-        <div class="plant-leaf plant-leaf-4"></div>
-        <div class="plant-leaf plant-leaf-5"></div>
-        <div class="plant-flower"></div>
       </div>
-      
       <div class="plant plant-3">
         <div class="plant-stem"></div>
         <div class="plant-leaf plant-leaf-1"></div>
         <div class="plant-leaf plant-leaf-2"></div>
         <div class="plant-leaf plant-leaf-3"></div>
-        <div class="plant-flower"></div>
+      </div>
+      <div class="cloud"></div>
+      <div class="sun"></div>
+      <div class="rain">
+        <div class="raindrop" style="left: 20%; animation-delay: 0.2s;"></div>
+        <div class="raindrop" style="left: 40%; animation-delay: 0.5s;"></div>
+        <div class="raindrop" style="left: 60%; animation-delay: 0.1s;"></div>
+        <div class="raindrop" style="left: 80%; animation-delay: 0.7s;"></div>
+        <div class="raindrop" style="left: 30%; animation-delay: 0.3s;"></div>
+        <div class="raindrop" style="left: 70%; animation-delay: 0.6s;"></div>
+        <div class="raindrop" style="left: 90%; animation-delay: 0.4s;"></div>
+      </div>
+    </div>
+    
+    <div class="header">
+      <h1><i class="fas fa-seedling"></i>Crop Yield Prediction</h1>
+      <div class="subtitle">Optimize your harvest with data-driven insights</div>
+    </div>
+    
+    <div class="main-content">
+      <form action="/predict" method="POST" id="prediction-form">
+        <div class="form-title">
+          <i class="fas fa-clipboard-list"></i> Enter Crop Details
+        </div>
+        
+        <div class="weather-animation">
+          <i class="fas fa-cloud-sun"></i>
+        </div>
+        
+        <div class="field-row">
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> Region</label>
+            <select name="Region" required>
+              <option value="">Select Region</option>
+              <option value="East">East</option>
+              <option value="North">North</option>
+              <option value="South">South</option>
+              <option value="West">West</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-mountain"></i> Soil Type</label>
+            <select name="Soil_Type" required>
+              <option value="">Select Soil Type</option>
+              <option value="Sandy">Sandy</option>
+              <option value="Clay">Clay</option>
+              <option value="Loam">Loam</option>
+              <option value="Silt">Silt</option>
+              <option value="Chalky">Chalky</option>
+              <option value="Peaty">Peaty</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-leaf"></i> Crop</label>
+          <select name="Crop" required>
+            <option value="">Select Crop</option>
+            <option value="Cotton"><i class="crop-icon fas fa-tshirt"></i>Cotton</option>
+            <option value="Wheat"><i class="crop-icon fas fa-wheat-awn"></i>Wheat</option>
+            <option value="Rice"><i class="crop-icon fas fa-seedling"></i>Rice</option>
+            <option value="Maize"><i class="crop-icon fas fa-corn"></i>Maize</option>
+            <option value="Barley"><i class="crop-icon fas fa-wheat-awn-circle-exclamation"></i>Barley</option>
+            <option value="Soybean"><i class="crop-icon fas fa-bean"></i>Soybean</option>
+          </select>
+        </div>
+        
+        <div class="field-row">
+          <div class="form-group">
+            <label><i class="fas fa-cloud-sun-rain"></i> Weather Condition</label>
+            <select name="Weather_Condition" required>
+              <option value="">Select Weather</option>
+              <option value="Sunny">Sunny</option>
+              <option value="Cloudy">Cloudy</option>
+              <option value="Rainy">Rainy</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-language"></i> Language</label>
+            <select name="language" id="language" required>
+              <option value="">Select Language</option>
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Tamil">Tamil</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="field-row">
+          <div class="form-group">
+            <label><i class="fas fa-flask"></i> Fertilizer Used</label>
+            <select name="Fertilizer_Used" required>
+              <option value="">Select Option</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-tint"></i> Irrigation Used</label>
+            <select name="Irrigation_Used" required>
+              <option value="">Select Option</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="field-row">
+          <div class="form-group">
+            <label><i class="fas fa-cloud-rain"></i> Rainfall (mm)</label>
+            <input type="number" name="Rainfall_mm" step="0.01" placeholder="Enter rainfall in mm" required>
+          </div>
+          
+          <div class="form-group">
+            <label><i class="fas fa-temperature-high"></i> Temperature (°C)</label>
+            <input type="number" name="Temperature_Celsius" step="0.01" placeholder="Enter temperature in °C" required>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label><i class="fas fa-calendar-alt"></i> Days to Harvest</label>
+          <input type="number" name="Days_to_Harvest" placeholder="Enter days to harvest" required>
+        </div>
+        
+        <button type="submit">
+          <div class="grow-plant"></div>
+          <i class="fas fa-chart-line"></i> Predict Yield
+        </button>
+        
+        <div class="soil-texture"></div>
+        <div class="wheat-decoration">
+          <div class="wheat-stem"></div>
+          <div class="wheat-head"></div>
+        </div>
+      </form>
+
+      <div class="output-container">
+        {% if prediction %}
+          <div class="result">
+            <div class="result-icon"><i class="fas fa-seedling"></i></div>
+            <div>Predicted Crop Yield:</div>
+            <strong>{{ prediction }} tons/hectare</strong>
+            <p>Based on your input parameters</p>
+          </div>
+          
+          {% if explanation %}
+          <div class="explanation">
+            <div class="explanation-header">
+              <div class="explanation-icon"><i class="fas fa-lightbulb"></i></div>
+              <h2 class="explanation-title">Analysis & Recommendations</h2>
+            </div>
+            <div class="explanation-content">
+              {{ explanation.replace('\n', '<br>') | safe }}
+            </div>
+            
+            <div class="advice">
+              <h3><i class="fas fa-hand-point-right"></i> Farming Tips</h3>
+              <ul>
+                <li>Monitor soil moisture regularly for optimal irrigation</li>
+                <li>Consider crop rotation to improve soil health</li>
+                <li>Implement integrated pest management for better yields</li>
+              </ul>
+            </div>
+          </div>
+          {% endif %}
+        {% else %}
+          <div class="result" style="text-align: center;">
+            <div class="result-icon"><i class="fas fa-chart-bar"></i></div>
+            <h3>Yield Prediction</h3>
+            <p>Fill out the form to get your crop yield prediction and personalized recommendations.</p>
+          </div>
+          
+          <div class="explanation">
+            <div class="explanation-header">
+              <div class="explanation-icon"><i class="fas fa-info-circle"></i></div>
+              <h2 class="explanation-title">How It Works</h2>
+            </div>
+            <div class="explanation-content">
+              <p>Our advanced prediction model analyzes multiple factors to estimate your crop yield:</p>
+              <ul>
+                <li>Regional climate patterns and soil conditions</li>
+                <li>Crop-specific growth requirements</li>
+                <li>Weather impacts on different growth stages</li>
+                <li>Effects of fertilization and irrigation practices</li>
+              </ul>
+              
+              <div class="advice">
+                <h3><i class="fas fa-star"></i> Benefits</h3>
+                <p>Make data-driven decisions to maximize your harvest and optimize resource usage.</p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
       </div>
     </div>
   </div>
   
-  <div class="loading" id="loading">
-    <div class="loading-animation">
-      <div class="loading-circle"></div>
-      <div class="loading-circle"></div>
-      <div class="loading-circle"></div>
-    </div>
-    <div class="loading-text">Analyzing crop data...</div>
+  <div class="loading">
+    <div class="loading-spinner"></div>
   </div>
   
   <script>
-    // Dropdown functionality
-    document.querySelectorAll('.dropdown').forEach(dropdown => {
-      const select = dropdown.querySelector('.dropdown-select');
-      const menu = dropdown.querySelector('.dropdown-menu');
-      const items = dropdown.querySelectorAll('.dropdown-item');
-      const input = dropdown.querySelector('input[type="hidden"]');
-      
-      select.addEventListener('click', () => {
-        select.classList.toggle('active');
-        menu.classList.toggle('active');
-      });
-      
-      items.forEach(item => {
-        item.addEventListener('click', () => {
-          const value = item.getAttribute('data-value');
-          const text = item.textContent.trim();
-          const icon = item.querySelector('i') ? item.querySelector('i').cloneNode(true) : null;
-          
-          // Update hidden input
-          input.value = value;
-          
-          // Update display
-          const placeholder = select.querySelector('.placeholder');
-          if (placeholder) {
-            placeholder.className = 'value';
-            placeholder.textContent = text;
-            
-            // Replace icon if exists
-            const currentIcon = select.querySelector('i:first-child');
-            if (icon && currentIcon) {
-              select.replaceChild(icon, currentIcon);
-            }
-          }
-          
-          select.classList.remove('active');
-          menu.classList.remove('active');
-        });
-      });
-      
-      // Close dropdown when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) {
-          select.classList.remove('active');
-          menu.classList.remove('active');
-        }
-      });
+    // Show loading animation when form is submitted
+    document.getElementById('prediction-form').addEventListener('submit', function() {
+      document.querySelector('.loading').classList.add('active');
     });
     
-    // Option card selection
-    document.querySelectorAll('.option-grid').forEach(grid => {
-      const cards = grid.querySelectorAll('.option-card');
-      const input = grid.parentElement.querySelector('input[type="hidden"]');
-      
-      cards.forEach(card => {
-        card.addEventListener('click', () => {
-          // Remove selected class from all cards
-          cards.forEach(c => c.classList.remove('selected'));
-          
-          // Add selected class to clicked card
-          card.classList.add('selected');
-          
-          // Update hidden input
-          input.value = card.getAttribute('data-value');
-        });
-      });
-    });
+    // Animate weather icon based on selected weather condition
+    const weatherSelect = document.querySelector('select[name="Weather_Condition"]');
+    const weatherIcon = document.querySelector('.weather-animation i');
     
-    // Toggle switches
-    document.getElementById('fertilizer-toggle').addEventListener('change', function() {
-      const label = document.getElementById('fertilizer-label');
-      const input = document.querySelector('input[name="Fertilizer_Used"]');
-      
-      if (this.checked) {
-        label.textContent = 'Yes';
-        input.value = '1';
-      } else {
-        label.textContent = 'No';
-        input.value = '0';
+    weatherSelect.addEventListener('change', function() {
+      switch(this.value) {
+        case 'Sunny':
+          weatherIcon.className = 'fas fa-sun';
+          break;
+        case 'Cloudy':
+          weatherIcon.className = 'fas fa-cloud';
+          break;
+        case 'Rainy':
+          weatherIcon.className = 'fas fa-cloud-rain';
+          break;
+        default:
+          weatherIcon.className = 'fas fa-cloud-sun';
       }
     });
     
-    document.getElementById('irrigation-toggle').addEventListener('change', function() {
-      const label = document.getElementById('irrigation-label');
-      const input = document.querySelector('input[name="Irrigation_Used"]');
-      
-      if (this.checked) {
-        label.textContent = 'Yes';
-        input.value = '1';
-      } else {
-        label.textContent = 'No';
-        input.value = '0';
-      }
-    });
-    
-    // Form submission
-    document.getElementById('prediction-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Show loading animation
-      document.getElementById('loading').classList.add('active');
-      
-      // Simulate API call (replace with actual form submission)
-      setTimeout(() => {
-        document.getElementById('loading').classList.remove('active');
-        
-        // Display results (this would normally come from the server)
-        const resultContainer = document.getElementById('result-container');
-        resultContainer.innerHTML = `
-          <div class="result-icon"><i class="fas fa-seedling"></i></div>
-          <div>Predicted Crop Yield:</div>
-          <div class="result-value">5.8 <span class="result-unit">tons/hectare</span></div>
-          
-          <div class="result-details">
-            <h3><i class="fas fa-lightbulb"></i> Analysis & Recommendations</h3>
-            <p>Based on your inputs, we've analyzed the potential yield for your crop.</p>
-            
-            <ul>
-              <li>Your soil type is well-suited for this crop variety.</li>
-              <li>The weather conditions in your region are favorable for growth.</li>
-              <li>Your irrigation practices are helping maximize yield potential.</li>
-              <li>Consider adjusting fertilizer application for optimal results.</li>
-            </ul>
-            
-            <div class="recommendation-box">
-              <h3><i class="fas fa-hand-point-right"></i> Farming Tips</h3>
-              <p>Monitor soil moisture regularly and consider implementing crop rotation next season to improve soil health and reduce pest pressure.</p>
-            </div>
-          </div>
-        `;
-        
-        resultContainer.classList.add('active');
-        
-        // Scroll to results
-        resultContainer.scrollIntoView({ behavior: 'smooth' });
-      }, 2000);
-    });
-    
-    // Create animated raindrops for background
+    // Create animated raindrops
     function createRaindrops() {
-      const bgPattern = document.querySelector('.bg-pattern');
+      const rain = document.querySelector('.rain');
       for (let i = 0; i < 20; i++) {
         const drop = document.createElement('div');
         drop.className = 'raindrop';
         drop.style.left = Math.random() * 100 + '%';
         drop.style.animationDelay = Math.random() * 2 + 's';
-        bgPattern.appendChild(drop);
+        drop.style.opacity = Math.random() * 0.3 + 0.1;
+        rain.appendChild(drop);
       }
     }
     
