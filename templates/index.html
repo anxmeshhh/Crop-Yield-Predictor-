@@ -47,12 +47,37 @@
       font-size: 18px;
       font-weight: bold;
     }
+    .explanation {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+      background: #f0f0f0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .explanation h2, .explanation h3 {
+      margin-top: 15px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+    
+    .explanation ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    
+    .advice {
+      background: #e6f9ec;
+      border-left: 6px solid #4CAF50;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    
   </style>
 </head>
 <body>
   <h1>🌾 Crop Yield Prediction Form</h1>
   <form action="/predict" method="POST">
-
     <label>Region:</label>
     <select name="Region" required>
       <option value="East">East</option>
@@ -108,6 +133,13 @@
 
     <label>Days to Harvest:</label>
     <input type="number" name="Days_to_Harvest" required>
+    
+    <label for="language">Language:</label>
+    <select name="language" id="language" required>
+      <option value="English">English</option>
+      <option value="Hindi">Hindi</option>
+      <option value="Tamil">Tamil</option>
+    </select>
 
     <button type="submit">Predict Yield</button>
   </form>
@@ -116,6 +148,11 @@
     <div class="result">
       🌱 Predicted Crop Yield: <strong>{{ prediction }} tons/hectare</strong>
     </div>
+    {% if explanation %}
+    <div class="explanation">
+      📜 Explanation: <strong>{{ explanation }}</strong>
+    </div>
+    {% endif %}
   {% endif %}
 </body>
 </html>
