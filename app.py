@@ -100,11 +100,6 @@ def predict():
         ❌ Final response must be written entirely in {language}. Avoid mixing languages. English is **not allowed** anywhere in the response.
         """
 
-
-
-
-
-
         # Generate GenAI response
         gemini_response = model.generate_content(prompt)
         explanation = gemini_response.text
