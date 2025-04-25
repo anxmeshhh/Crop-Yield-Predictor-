@@ -150,8 +150,9 @@
     </div>
     {% if explanation %}
     <div class="explanation">
-      📜 Explanation: <strong>{{ explanation }}</strong>
+      📜 Explanation: <strong>{{ explanation.replace('\n', '<br>') | safe }}</strong>
     </div>
+    
     {% endif %}
   {% endif %}
 </body>
